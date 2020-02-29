@@ -3,20 +3,22 @@ import './App.css';
 
 const API_URL = 'https://api.nytimes.com/svc/topstories/v2/home.json';
 const API_KEY = 'usMFEIhDlH6rz0pdz0YATYU7LShy3XJB';
+const API_KEY_PARAM = '?api-key=';
 
 class App extends Component {
   state = {
     news: [],
     newsCount: 0
   }
+  handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
   componentDidMount() {
-    fetch(API_URL + '?api-key=' + API_KEY)
-      .then(function (response) {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-        return response;
-      })
+    fetch(API_URL + API_KEY_PARAM + API_KEY)
+      .then(this.handleErrors)
       .then(response => response.json())
       .then((data) => {
         this.setState({ news: data.results })
@@ -31,7 +33,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>NYT News - Top Stories ({this.state.newsCount})</h1>
-        <div className="row">
+        <div className="row card-columns">
           {this.state.news.map((post) => (
             <div className="card" style={{ width: 18 + 'rem' }}>
               <a href={post.url} target="_blank" rel="noopener noreferrer">
