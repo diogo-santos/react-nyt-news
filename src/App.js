@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 
+const API_URL = 'https://api.nytimes.com/svc/topstories/v2/home.json';
+const API_KEY = 'usMFEIhDlH6rz0pdz0YATYU7LShy3XJB';
+
 class App extends Component {
   state = {
     news: [],
     newsCount: 0
   }
   componentDidMount() {
-    fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=usMFEIhDlH6rz0pdz0YATYU7LShy3XJB')
+    fetch(API_URL + '?api-key=' + API_KEY)
+      .then(function (response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response;
+      })
       .then(response => response.json())
       .then((data) => {
         this.setState({ news: data.results })
@@ -16,6 +25,7 @@ class App extends Component {
           newsCount: data.num_results
         })
       })
+      .catch(error => console.log(error));
   }
   render() {
     return (
