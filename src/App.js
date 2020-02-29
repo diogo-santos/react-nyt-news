@@ -3,7 +3,6 @@ import './App.css';
 
 const API_URL = 'https://api.nytimes.com/svc/topstories/v2/home.json';
 const API_KEY = 'usMFEIhDlH6rz0pdz0YATYU7LShy3XJB';
-const API_KEY_PARAM = '?api-key=';
 
 class App extends Component {
   state = {
@@ -17,7 +16,7 @@ class App extends Component {
     return response;
   }
   componentDidMount() {
-    fetch(API_URL + API_KEY_PARAM + API_KEY)
+    fetch(`${API_URL}?api-key=${API_KEY}`)
       .then(this.handleErrors)
       .then(response => response.json())
       .then((data) => {
