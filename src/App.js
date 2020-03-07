@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 const API_URL = 'https://api.nytimes.com/svc/topstories/v2/home.json';
-const API_KEY = 'usMFEIhDlH6rz0pdz0YATYU7LShy3XJB';
+const API_KEY = process.env.REACT_APP_NYT_API_KEY;
 
 class App extends Component {
   state = {
