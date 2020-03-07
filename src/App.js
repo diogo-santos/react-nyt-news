@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import PostList from "./components/PostList";
+
 const API_URL = 'https://api.nytimes.com/svc/topstories/v2/home.json';
 const API_KEY = process.env.REACT_APP_NYT_API_KEY;
 
@@ -32,19 +34,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>NYT News - Top Stories ({this.state.newsCount})</h1>
-        <div className="row card-columns">
-          {this.state.news.map((post) => (
-            <div className="card" style={{ width: 18 + 'rem' }}>
-              <a href={post.url} target="_blank" rel="noopener noreferrer">
-                <img className="card-img-top" src={post.multimedia[0].url} alt={post.caption} />
-              </a>
-              <div className="card-body">
-                <h5 className="card-title">{post.title}</h5>
-                <p className="card-text text-muted">{post.abstract}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <PostList posts={this.state.news} />
       </div>
     );
   }
