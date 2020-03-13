@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import PostList from "./components/PostList";
+import Title from "./components/Title";
 
 const API_URL = 'https://api.nytimes.com/svc/topstories/v2/home.json';
 const API_KEY = process.env.REACT_APP_NYT_API_KEY;
@@ -33,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>NYT News - Top Stories ({this.state.postCount})</h1>
+        <Title title="NYT News - Top Stories" postCount={this.state.postCount} />
         <PostList posts={this.state.posts} />
       </div>
     );
