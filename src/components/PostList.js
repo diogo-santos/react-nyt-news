@@ -6,7 +6,7 @@ function PostList(props) {
     <div className="row">
       <div className="card-columns">
       {props.posts.map((post, i) => (
-        <div className="card" key={i} style={{ width: 18 + 'rem' }}>
+        <div className="card" key={i}>
           <a href={post.url} target="_blank" rel="noopener noreferrer">
             <img className="card-img-top" src={post.multimedia && post.multimedia.length >= 1? post.multimedia[0].url : ""} alt="" />
           </a>
