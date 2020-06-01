@@ -1,7 +1,7 @@
 # REACTJS New York Times News
 Display NYT posts from REST call to Top Stories API
 
-Check it out at: https://limitless-forest-15262.herokuapp.com/
+Check it out at: https://reactjs-nyt-news.herokuapp.com/
 
 ## Getting the code on your computer
 - [ ] Download and install <a href="https://nodejs.org/en/download/" target="_blank">Node.js</a>
