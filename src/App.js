@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Title title="NYT News - Top Stories" postCount={this.state.postCount} />
+        <Title title={`NYT News - Top Stories`} postCount={this.state.postCount} />
         <PostList posts={this.state.posts} />
       </div>
     );
