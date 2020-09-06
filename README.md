@@ -1,4 +1,4 @@
-# REACTJS New York Times News
+# REACTJS New York Times
 Display NYT posts from REST call to Top Stories API
 
 Check it out at: https://reactjs-nyt-news.herokuapp.com/
@@ -9,13 +9,9 @@ Check it out at: https://reactjs-nyt-news.herokuapp.com/
 - [ ] Download the project or clone it from https://github.com/diogo-santos/react-nyt-news
 
 ```
-cd react-nyt-news
+cd reactjs-nyt-news
+echo "REACT_APP_NYT_API_KEY=*Your API KEY previouly set*" >> .env.local
 ```
-- [ ] Create a file .env and insert the line bellow
-```
-REACT_APP_NYT_API_KEY=*Your API KEY previouly set*
-```
-
 ```
 npm install
 npm start
