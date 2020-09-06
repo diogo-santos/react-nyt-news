@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Title title={`NYT News - Top Stories (${this.state.postCount})`} />
+        <Title title={`NYT - Top Stories (${this.state.postCount})`} />
         <PostList posts={this.state.posts} />
       </div>
     );
