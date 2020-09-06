@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import PostList from "./PostList";
+import PostList from "../PostList";
 
 test("renders post data", () => {
   const mockPosts = {

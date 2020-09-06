@@ -2,7 +2,9 @@ import React from "react";
 
 function Title(props) {
   return (
-    <h2>{`${props.title} (${props.postCount})`}</h2>
+    <nav className="navbar navbar-light bg-light mt-2 mb-2">
+      <span className="navbar-brand mb-0 h1">{props.title}</span>
+    </nav>
   );
 }
 

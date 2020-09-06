@@ -3,7 +3,7 @@ import React from "react";
 
 function PostList(props) {
   return (
-    <div className="row">
+    <div className="container">
       <div className="card-columns">
       {props.posts.map((post, i) => (
         <div className="card" key={i}>
